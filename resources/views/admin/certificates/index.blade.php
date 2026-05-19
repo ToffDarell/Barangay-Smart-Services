@@ -4,7 +4,7 @@
     <section class="space-y-5">
         <div class="flex items-center justify-between">
             <div>
-                <p class="text-[10px] font-bold uppercase tracking-widest text-gray-500 mb-1">BARANGAY NORTE POBLACION &nbsp;&rsaquo;&nbsp; <span class="text-violet-600">DOCUMENT SERVICES</span></p>
+                <p class="text-[10px] font-bold uppercase tracking-widest text-gray-500 mb-1">BARANGAY NORTE POBLACION &nbsp;&rsaquo;&nbsp; <span class="text-red-600">DOCUMENT SERVICES</span></p>
                 <h2 class="text-2xl font-bold text-gray-900">Certificate Requests</h2>
             </div>
             <button class="flex items-center gap-2 border border-gray-200 rounded-md px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 transition">
@@ -22,12 +22,12 @@
                             <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-400">
                                 <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
                             </span>
-                            <input type="text" class="w-full rounded-md border border-gray-200 bg-white px-3 py-2 pl-9 text-sm text-gray-700 outline-none transition focus:border-violet-500 focus:ring-1 focus:ring-violet-500" placeholder="Search by name or reference..." />
+                            <input type="text" class="w-full rounded-md border border-gray-200 bg-white px-3 py-2 pl-9 text-sm text-gray-700 outline-none transition focus:border-red-500 focus:ring-1 focus:ring-red-500" placeholder="Search by name or reference..." />
                         </div>
-                        <select class="rounded-md border border-gray-200 bg-white px-3 py-2 text-sm text-gray-700 outline-none transition focus:border-violet-500 focus:ring-1 focus:ring-violet-500">
+                        <select class="rounded-md border border-gray-200 bg-white px-3 py-2 text-sm text-gray-700 outline-none transition focus:border-red-500 focus:ring-1 focus:ring-red-500">
                             <option>All Document Types</option>
                         </select>
-                        <select class="rounded-md border border-gray-200 bg-white px-3 py-2 text-sm text-gray-700 outline-none transition focus:border-violet-500 focus:ring-1 focus:ring-violet-500">
+                        <select class="rounded-md border border-gray-200 bg-white px-3 py-2 text-sm text-gray-700 outline-none transition focus:border-red-500 focus:ring-1 focus:ring-red-500">
                             <option>Status: All</option>
                         </select>
                     </div>
@@ -35,7 +35,7 @@
 
                 <!-- Tabs -->
                 <div class="mt-6 flex gap-6 border-b border-gray-100">
-                    <button class="border-b-2 border-violet-600 pb-2 text-sm font-semibold text-violet-600">All Requests (234)</button>
+                    <button class="border-b-2 border-red-600 pb-2 text-sm font-semibold text-red-600">All Requests (234)</button>
                     <button class="border-b-2 border-transparent pb-2 text-sm font-semibold text-gray-500 hover:text-gray-700">Pending (45)</button>
                     <button class="border-b-2 border-transparent pb-2 text-sm font-semibold text-gray-500 hover:text-gray-700">For Pick-up (12)</button>
                     <button class="border-b-2 border-transparent pb-2 text-sm font-semibold text-gray-500 hover:text-gray-700">Completed (177)</button>
@@ -83,7 +83,7 @@
                                     </span>
                                 </td>
                                 <td class="py-4 pl-4 align-top">
-                                    <button class="rounded border border-gray-200 px-3 py-1.5 text-[11px] font-semibold text-violet-600 hover:bg-violet-50 transition">
+                                    <button class="rounded border border-gray-200 px-3 py-1.5 text-[11px] font-semibold text-red-600 hover:bg-red-50 transition">
                                         Review
                                     </button>
                                 </td>
@@ -98,7 +98,7 @@
                 <p class="text-sm text-gray-500">Showing <span class="font-medium text-gray-900">1</span> to <span class="font-medium text-gray-900">10</span> of <span class="font-medium text-gray-900">234</span> results</p>
                 <div class="flex gap-1">
                     <button class="h-8 w-8 rounded flex items-center justify-center border border-gray-200 text-gray-400 hover:bg-gray-50"><svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg></button>
-                    <button class="h-8 w-8 rounded flex items-center justify-center bg-violet-600 text-white font-medium text-sm">1</button>
+                    <button class="h-8 w-8 rounded flex items-center justify-center bg-red-600 text-white font-medium text-sm">1</button>
                     <button class="h-8 w-8 rounded flex items-center justify-center border border-gray-200 text-gray-600 font-medium text-sm hover:bg-gray-50">2</button>
                     <button class="h-8 w-8 rounded flex items-center justify-center border border-gray-200 text-gray-600 font-medium text-sm hover:bg-gray-50">3</button>
                     <button class="h-8 w-8 rounded flex items-center justify-center border border-gray-200 text-gray-400 hover:bg-gray-50"><svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg></button>

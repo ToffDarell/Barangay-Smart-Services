@@ -8,11 +8,16 @@
     <title>{{ config('app.name', 'Barangay North System') }}</title>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
 
+    {{-- Site icon using official logo --}}
+    <link rel="icon" type="image/png" href="{{ asset('images/logo.png') }}">
+    <link rel="apple-touch-icon" href="{{ asset('images/logo.png') }}">
+    <meta name="theme-color" content="#7f0000">
+
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @stack('styles')
 </head>
 <body class="antialiased">
-    <div x-data="{ sidebarOpen: false, profileOpen: false }" class="admin-shell">
+    <div x-data="{ sidebarOpen: false, profileOpen: false, logoutConfirm: false }" class="admin-shell">
         @include('layouts.navigation')
 
         <div class="lg:pl-[17rem]">
@@ -25,14 +30,6 @@
                                 <path d="M4 7h16M4 12h16M4 17h16" stroke-linecap="round" stroke-width="1.8" />
                             </svg>
                         </button>
-
-                        <div>
-                            <p class="admin-page-kicker">{{ $eyebrow ?? 'Barangay Information & Services System' }}</p>
-                            <div class="mt-1 flex items-center gap-3">
-                                <h1 class="admin-page-title">{{ $header ?? 'Dashboard' }}</h1>
-                                <span class="badge-role">{{ auth()->user()->getRoleNames()->first() ?? 'User' }}</span>
-                            </div>
-                        </div>
                     </div>
 
                     <div class="hidden flex-1 lg:block">
@@ -76,7 +73,7 @@
 
                         <div class="relative">
                             <button type="button" @click="profileOpen = !profileOpen" class="flex items-center gap-3 bg-white pl-2 py-1">
-                                <div class="flex h-8 w-8 items-center justify-center rounded-full bg-[#7c3aed] text-xs font-bold text-white">
+                                <div class="flex h-8 w-8 items-center justify-center rounded-full bg-[#b91c1c] text-xs font-bold text-white">
                                     {{ \Illuminate\Support\Str::of(auth()->user()->name ?? 'Kerwin Figs')->explode(' ')->map(fn ($part) => \Illuminate\Support\Str::substr($part, 0, 1))->take(2)->implode('') }}
                                 </div>
                                 <div class="hidden text-left sm:block leading-tight">
@@ -98,13 +95,17 @@
                                         <span class="text-violet-600">Edit</span>
                                     </a>
 
-                                    <form method="POST" action="{{ route('logout') }}">
+                                    <form id="logout-form" method="POST" action="{{ route('logout') }}">
                                         @csrf
-                                        <button type="submit" class="flex w-full items-center justify-between rounded-lg px-4 py-3 text-sm font-medium text-rose-700 transition hover:bg-rose-50">
-                                            <span>Log Out</span>
-                                            <span>Exit</span>
-                                        </button>
                                     </form>
+                                    <button type="button"
+                                        @click="logoutConfirm = true; profileOpen = false"
+                                        class="flex w-full items-center gap-3 rounded-lg px-4 py-3 text-sm font-medium text-rose-700 transition hover:bg-rose-50">
+                                        <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                            <path d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                                        </svg>
+                                        <span>Log Out</span>
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -117,9 +118,85 @@
                 {{ $slot }}
             </main>
         </div>
+
+        {{-- Logout Confirmation Modal (inside x-data scope) --}}
+        <div
+            x-show="logoutConfirm"
+            x-cloak
+            class="fixed inset-0 z-[999] flex items-center justify-center px-4"
+            @keydown.escape.window="logoutConfirm = false"
+        >
+            {{-- Backdrop --}}
+            <div
+                x-show="logoutConfirm"
+                x-transition:enter="transition ease-out duration-200"
+                x-transition:enter-start="opacity-0"
+                x-transition:enter-end="opacity-100"
+                x-transition:leave="transition ease-in duration-150"
+                x-transition:leave-start="opacity-100"
+                x-transition:leave-end="opacity-0"
+                class="absolute inset-0 bg-gray-900/60 backdrop-blur-sm"
+                @click="logoutConfirm = false"
+            ></div>
+
+            {{-- Dialog Card --}}
+            <div
+                x-data="{ shake: false }"
+                x-show="logoutConfirm"
+                x-transition:enter="transition ease-out duration-300"
+                x-transition:enter-start="opacity-0 scale-90 translate-y-6"
+                x-transition:enter-end="opacity-100 scale-100 translate-y-0"
+                x-transition:leave="transition ease-in duration-150"
+                x-transition:leave-start="opacity-100 scale-100 translate-y-0"
+                x-transition:leave-end="opacity-0 scale-90 translate-y-6"
+                :class="shake ? 'animate-[shake_0.35s_ease-in-out]' : ''"
+                class="relative z-10 w-full max-w-sm rounded-2xl bg-white p-8 shadow-2xl"
+            >
+                {{-- Icon --}}
+                <div class="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-full bg-rose-100">
+                    <svg class="h-8 w-8 text-rose-600" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                    </svg>
+                </div>
+
+                <h3 class="text-center text-xl font-bold text-gray-900">Log Out?</h3>
+                <p class="mt-2 text-center text-sm text-gray-500">Are you sure you want to end your session? Any unsaved changes will be lost.</p>
+
+                <div class="mt-7 flex flex-col gap-3">
+                    <button
+                        type="button"
+                        @click="document.getElementById('logout-form').submit()"
+                        class="flex w-full items-center justify-center gap-2 rounded-xl bg-[#b91c1c] px-4 py-3 text-sm font-semibold text-white shadow-md shadow-red-900/25 transition hover:bg-[#991b1b] active:scale-[0.97]"
+                    >
+                        <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                        </svg>
+                        Yes, Log Out
+                    </button>
+
+                    <button
+                        type="button"
+                        @click="shake = true; setTimeout(() => { shake = false }, 400); logoutConfirm = false"
+                        class="w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm font-semibold text-gray-700 transition hover:bg-gray-50 active:scale-[0.97]"
+                    >
+                        Cancel, Stay Here
+                    </button>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <a href="{{ route('settings.system-configuration') }}" class="fixed bottom-6 right-6 inline-flex h-14 w-14 items-center justify-center rounded-full bg-violet-600 text-white shadow-lg transition hover:bg-violet-700">
+    <style>
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            20% { transform: translateX(-6px); }
+            40% { transform: translateX(6px); }
+            60% { transform: translateX(-4px); }
+            80% { transform: translateX(4px); }
+        }
+    </style>
+
+    <a href="{{ route('settings.system-configuration') }}" class="fixed bottom-6 right-6 inline-flex h-14 w-14 items-center justify-center rounded-full bg-[#b91c1c] text-white shadow-lg transition hover:bg-[#991b1b]">
         <span class="sr-only">Open settings</span>
         <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor">
             <path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 0 0 2.591 1.066c1.527-.94 3.31.843 2.37 2.37a1.724 1.724 0 0 0 1.065 2.591c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 0 0-1.066 2.591c.94 1.527-.843 3.31-2.37 2.37a1.724 1.724 0 0 0-2.591 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 0 0-2.591-1.066c-1.527.94-3.31-.843-2.37-2.37a1.724 1.724 0 0 0-1.065-2.591c-1.756-.426-1.756-2.924 0-3.35A1.724 1.724 0 0 0 5.364 7.75c-.94-1.527.843-3.31 2.37-2.37.996.613 2.296.07 2.591-1.065Z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" />

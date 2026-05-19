@@ -76,15 +76,15 @@
                 <div class="space-y-4 px-6 py-5">
                     <div>
                         <label class="block text-sm font-semibold text-gray-700 mb-1">Purpose Name</label>
-                        <input type="text" class="w-full rounded-lg border border-gray-200 px-3 py-2 text-sm text-gray-800 placeholder-gray-400 outline-none focus:border-violet-500 focus:ring-1 focus:ring-violet-500" placeholder="e.g., Local Employment" />
+                        <input type="text" class="w-full rounded-lg border border-gray-200 px-3 py-2 text-sm text-gray-800 placeholder-gray-400 outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500" placeholder="e.g., Local Employment" />
                     </div>
                     <div>
                         <label class="block text-sm font-semibold text-gray-700 mb-1">Description</label>
-                        <textarea rows="3" class="w-full rounded-lg border border-gray-200 px-3 py-2 text-sm text-gray-800 placeholder-gray-400 outline-none focus:border-violet-500 focus:ring-1 focus:ring-violet-500" placeholder="Optional: Describe the use case for this purpose"></textarea>
+                        <textarea rows="3" class="w-full rounded-lg border border-gray-200 px-3 py-2 text-sm text-gray-800 placeholder-gray-400 outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500" placeholder="Optional: Describe the use case for this purpose"></textarea>
                     </div>
                     <div>
                         <label class="block text-sm font-semibold text-gray-700 mb-1">Status</label>
-                        <select class="w-full rounded-lg border border-gray-200 px-3 py-2 text-sm text-gray-800 outline-none focus:border-violet-500 focus:ring-1 focus:ring-violet-500">
+                        <select class="w-full rounded-lg border border-gray-200 px-3 py-2 text-sm text-gray-800 outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500">
                             <option>Active</option>
                             <option>Inactive</option>
                         </select>
@@ -92,7 +92,7 @@
                 </div>
                 <div class="flex justify-end gap-3 border-t border-gray-100 px-6 py-4 bg-gray-50 rounded-b-xl">
                     <button type="button" @click="open = false" class="rounded-lg border border-gray-200 bg-white px-4 py-2 text-sm font-semibold text-gray-700 hover:bg-gray-50 transition">Cancel</button>
-                    <button type="button" class="rounded-lg bg-violet-600 px-4 py-2 text-sm font-semibold text-white hover:bg-violet-700 transition shadow-[0_2px_8px_rgba(124,58,237,0.3)]">Save Purpose</button>
+                    <button type="button" class="rounded-lg bg-red-600 px-4 py-2 text-sm font-semibold text-white hover:bg-red-700 transition shadow-[0_2px_8px_rgba(124,58,237,0.3)]">Save Purpose</button>
                 </div>
             </div>
         </div>

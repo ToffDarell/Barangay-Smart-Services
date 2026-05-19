@@ -5,14 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ config('app.name', 'Barangay North System') }}</title>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+
+    {{-- Site icon using official logo --}}
+    <link rel="icon" type="image/png" href="{{ asset('images/logo.png') }}">
+    <link rel="apple-touch-icon" href="{{ asset('images/logo.png') }}">
+    <meta name="theme-color" content="#7f0000">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body class="bg-[#f7f8fc] text-gray-900 antialiased">
     <div class="border-b border-gray-100 bg-white">
         <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
             <a href="{{ route('landing') }}" class="flex items-center gap-3">
-                <div class="rounded-2xl bg-[#1e1b4b] p-2.5">
-                    <x-application-logo class="h-10 w-10" />
+                <div class="overflow-hidden rounded-xl w-12 h-12 shadow">
+                    <img src="{{ asset('images/logo.png') }}" alt="Barangay Norte Logo" class="w-full h-full object-cover">
                 </div>
                 <div>
                     <p class="text-xs font-semibold uppercase tracking-[0.22em] text-gray-400">Norte Poblacion</p>

@@ -48,11 +48,11 @@
     }
 
     .admin-input {
-        @apply w-full rounded-lg border border-gray-200 bg-white px-3 py-2.5 text-sm text-gray-700 outline-none transition focus:border-violet-500 focus:ring-4 focus:ring-violet-500/10;
+        @apply w-full rounded-lg border border-gray-200 bg-white px-3 py-2.5 text-sm text-gray-700 outline-none transition focus:border-red-500 focus:ring-4 focus:ring-red-500/10;
     }
 
     .civic-input {
-        @apply w-full rounded-lg border border-gray-200 bg-white px-3 py-2.5 text-sm text-gray-700 outline-none transition focus:border-violet-500 focus:ring-4 focus:ring-violet-500/10;
+        @apply w-full rounded-lg border border-gray-200 bg-white px-3 py-2.5 text-sm text-gray-700 outline-none transition focus:border-red-500 focus:ring-4 focus:ring-red-500/10;
     }
 
     .admin-label {
@@ -64,19 +64,19 @@
     }
 
     .admin-btn-primary {
-        @apply inline-flex items-center justify-center rounded-lg bg-violet-600 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-violet-700 focus:outline-none focus:ring-4 focus:ring-violet-500/15;
+        @apply inline-flex items-center justify-center rounded-lg bg-[#b91c1c] px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-[#991b1b] focus:outline-none focus:ring-4 focus:ring-red-500/15;
     }
 
     .civic-button {
-        @apply inline-flex items-center justify-center rounded-lg bg-violet-600 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-violet-700 focus:outline-none focus:ring-4 focus:ring-violet-500/15;
+        @apply inline-flex items-center justify-center rounded-lg bg-[#b91c1c] px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-[#991b1b] focus:outline-none focus:ring-4 focus:ring-red-500/15;
     }
 
     .admin-btn-secondary {
-        @apply inline-flex items-center justify-center rounded-lg border border-gray-200 bg-white px-4 py-2.5 text-sm font-semibold text-gray-700 transition hover:border-violet-300 hover:text-violet-700 focus:outline-none focus:ring-4 focus:ring-violet-500/10;
+        @apply inline-flex items-center justify-center rounded-lg border border-gray-200 bg-white px-4 py-2.5 text-sm font-semibold text-gray-700 transition hover:border-red-300 hover:text-red-700 focus:outline-none focus:ring-4 focus:ring-red-500/10;
     }
 
     .civic-button-secondary {
-        @apply inline-flex items-center justify-center rounded-lg border border-gray-200 bg-white px-4 py-2.5 text-sm font-semibold text-gray-700 transition hover:border-violet-300 hover:text-violet-700 focus:outline-none focus:ring-4 focus:ring-violet-500/10;
+        @apply inline-flex items-center justify-center rounded-lg border border-gray-200 bg-white px-4 py-2.5 text-sm font-semibold text-gray-700 transition hover:border-red-300 hover:text-red-700 focus:outline-none focus:ring-4 focus:ring-red-500/10;
     }
 
     .admin-btn-danger {
@@ -92,7 +92,7 @@
     }
 
     .admin-sidebar-link-active {
-        @apply bg-violet-600 text-white shadow-[0_10px_24px_rgba(124,58,237,0.26)];
+        @apply bg-[#b91c1c] text-white shadow-[0_10px_24px_rgba(185,28,28,0.26)];
     }
 
     .admin-sidebar-link-idle {
@@ -148,12 +148,11 @@
     }
 
     .badge-role {
-        @apply rounded-full bg-violet-100 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-violet-700;
+        @apply rounded-full bg-red-100 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-red-700;
     }
 
     .public-hero-bg {
-        background:
-            linear-gradient(90deg, rgba(15, 12, 41, 0.98) 0%, rgba(30, 27, 75, 0.95) 40%, rgba(48, 43, 99, 0.92) 100%);
+        background: radial-gradient(circle at top right, rgba(153, 27, 27, 0.95), rgba(127, 29, 29, 0.98), rgba(69, 10, 10, 1));
     }
 }
 
