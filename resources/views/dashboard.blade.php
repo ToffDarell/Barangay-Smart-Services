@@ -192,11 +192,6 @@
                         </tbody>
                     </table>
                 </div>
-
-                <!-- Floating action button overlay (decorative) -->
-                <button class="absolute bottom-6 right-6 w-12 h-12 bg-[#b91c1c] hover:bg-[#991b1b] text-white rounded-md flex items-center justify-center shadow-lg shadow-red-900/40">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.591 1.066c1.527-.94 3.31.843 2.37 2.37a1.724 1.724 0 001.065 2.591c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.591c.94 1.527-.843 3.31-2.37 2.37a1.724 1.724 0 00-2.591 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.591-1.066c-1.527.94-3.31-.843-2.37-2.37a1.724 1.724 0 00-1.065-2.591c-1.756-.426-1.756-2.924 0-3.35A1.724 1.724 0 005.364 7.75c-.94-1.527.843-3.31 2.37-2.37.996.613 2.296.07 2.591-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                </button>
             </div>
         </div>
     </section>
