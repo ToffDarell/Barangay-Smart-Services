@@ -19,19 +19,23 @@
                 <div class="grid gap-4 md:grid-cols-2">
                     <div>
                         <label class="admin-label">Barangay Name</label>
-                        <input type="text" class="admin-input" value="Barangay Norte Poblacion" />
+                        <input type="text" class="admin-input" value="{{ \App\Helpers\Settings::get('barangay_name', 'North Poblacion') }}" />
                     </div>
                     <div>
                         <label class="admin-label">Barangay Captain</label>
-                        <input type="text" class="admin-input" value="Hon. Sample Captain" />
+                        <input type="text" class="admin-input" value="{{ \App\Helpers\Settings::get('captain_name', 'Hon. Barangay Captain') }}" />
                     </div>
                     <div>
-                        <label class="admin-label">Address</label>
-                        <input type="text" class="admin-input" value="Maramag, Bukidnon" />
+                        <label class="admin-label">Municipality</label>
+                        <input type="text" class="admin-input" value="{{ \App\Helpers\Settings::get('municipality', 'Maramag') }}" />
+                    </div>
+                    <div>
+                        <label class="admin-label">Province</label>
+                        <input type="text" class="admin-input" value="{{ \App\Helpers\Settings::get('province', 'Bukidnon') }}" />
                     </div>
                     <div>
                         <label class="admin-label">Contact Number</label>
-                        <input type="text" class="admin-input" value="0912 345 6789" />
+                        <input type="text" class="admin-input" value="{{ \App\Helpers\Settings::get('contact_number', '0912 345 6789') }}" />
                     </div>
                 </div>
 

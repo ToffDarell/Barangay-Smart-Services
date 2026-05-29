@@ -32,21 +32,14 @@
                             </tr>
                         </thead>
                         <tbody class="divide-y divide-gray-100">
-                            @foreach ([
-                                ['Any legal purposes', '0.00'],
-                                ['Bank Purpose / Open Bank Account', '50.00'],
-                                ['Burial Assistance', '0.00'],
-                                ['Financial Assistance', '0.00'],
-                                ['Loan Purpose', '50.00'],
-                                ['Local Employment', '30.00'],
-                                ['Mayor\'s Permit', '30.00'],
-                                ['Medical Assistance', '0.00'],
-                            ] as $index => $item)
+                            @forelse($purposes as $index => $p)
                                 <tr class="hover:bg-gray-50">
                                     <td class="px-3 py-3 admin-table-cell">{{ $index + 1 }}</td>
-                                    <td class="px-3 py-3 admin-table-cell font-medium">{{ $item[0] }}</td>
-                                    <td class="px-3 py-3 admin-table-cell">₱ {{ $item[1] }}</td>
-                                    <td class="px-3 py-3"><span class="badge-active">ACTIVE</span></td>
+                                    <td class="px-3 py-3 admin-table-cell font-medium">{{ $p->name }}</td>
+                                    <td class="px-3 py-3 admin-table-cell">₱ {{ number_format($p->price, 2) }}</td>
+                                    <td class="px-3 py-3">
+                                        <span class="{{ $p->is_active ? 'badge-active' : 'badge-inactive' }}">{{ $p->is_active ? 'ACTIVE' : 'INACTIVE' }}</span>
+                                    </td>
                                     <td class="px-3 py-3">
                                         <div class="flex items-center gap-3">
                                             <a href="#" class="text-sky-500">
@@ -58,7 +51,9 @@
                                         </div>
                                     </td>
                                 </tr>
-                            @endforeach
+                            @empty
+                                <tr><td colspan="5" class="py-8 text-center text-sm text-gray-500">No purpose types yet.</td></tr>
+                            @endforelse
                         </tbody>
                     </table>
                 </div>
@@ -79,14 +74,14 @@
                         <input type="text" class="w-full rounded-lg border border-gray-200 px-3 py-2 text-sm text-gray-800 placeholder-gray-400 outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500" placeholder="e.g., Local Employment" />
                     </div>
                     <div>
-                        <label class="block text-sm font-semibold text-gray-700 mb-1">Description</label>
-                        <textarea rows="3" class="w-full rounded-lg border border-gray-200 px-3 py-2 text-sm text-gray-800 placeholder-gray-400 outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500" placeholder="Optional: Describe the use case for this purpose"></textarea>
+                        <label class="block text-sm font-semibold text-gray-700 mb-1">Price (₱)</label>
+                        <input type="number" step="0.01" class="w-full rounded-lg border border-gray-200 px-3 py-2 text-sm text-gray-800 placeholder-gray-400 outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500" placeholder="0.00" />
                     </div>
                     <div>
                         <label class="block text-sm font-semibold text-gray-700 mb-1">Status</label>
                         <select class="w-full rounded-lg border border-gray-200 px-3 py-2 text-sm text-gray-800 outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500">
-                            <option>Active</option>
-                            <option>Inactive</option>
+                            <option value="1">Active</option>
+                            <option value="0">Inactive</option>
                         </select>
                     </div>
                 </div>

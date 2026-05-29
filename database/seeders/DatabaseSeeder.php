@@ -50,5 +50,14 @@ class DatabaseSeeder extends Seeder
 
             $user->syncRoles([$account['role']]);
         }
+
+        // Seed residents and certificate requests
+        $this->call([
+            \Database\Seeders\ResidentSeeder::class,
+            \Database\Seeders\CertificateRequestSeeder::class,
+            \Database\Seeders\AnnouncementSeeder::class,
+        ]);
     }
+
 }
+

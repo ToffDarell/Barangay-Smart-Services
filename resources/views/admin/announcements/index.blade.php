@@ -11,21 +11,24 @@
         </div>
 
         <div class="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-            @foreach ([
-                ['Health Advisory', 'Vaccination drive scheduled this Friday at the barangay hall.', 'Health'],
-                ['Community Cleanup', 'Residents are encouraged to join the weekend cleanup drive.', 'Events'],
-                ['Safety Reminder', 'Please observe curfew and report concerns to the barangay office.', 'Safety'],
-            ] as $item)
+            @forelse ($announcements as $item)
                 <div class="admin-card p-5">
-                    <p class="text-xs font-semibold uppercase tracking-wide text-violet-600">{{ $item[2] }}</p>
-                    <h3 class="mt-2 admin-card-title">{{ $item[0] }}</h3>
-                    <p class="mt-3 admin-body">{{ $item[1] }}</p>
+                    <p class="text-xs font-semibold uppercase tracking-wide text-violet-600">{{ $item->category }}</p>
+                    <h3 class="mt-2 admin-card-title">{{ $item->title }}</h3>
+                    <p class="mt-3 admin-body">{{ $item->body }}</p>
                     <div class="mt-4 flex items-center justify-between">
-                        <span class="badge-active">Active</span>
+                        <span class="badge-active">{{ $item->is_active ? 'Active' : 'Inactive' }}</span>
                         <a href="#" class="text-sm font-semibold text-violet-600">Edit</a>
                     </div>
                 </div>
-            @endforeach
+            @empty
+                <div class="admin-card p-8 text-center col-span-full">
+                    <p class="text-gray-500">No announcements yet.</p>
+                </div>
+            @endforelse
+        </div>
+        <div class="mt-6">
+            {{ $announcements->links() }}
         </div>
     </section>
 </x-app-layout>

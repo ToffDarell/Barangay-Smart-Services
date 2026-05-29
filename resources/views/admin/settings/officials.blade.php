@@ -29,18 +29,18 @@
                             </tr>
                         </thead>
                         <tbody class="divide-y divide-gray-100">
-                            @foreach ([
-                                ['Hon. Sample Captain', 'Barangay Captain', 'Active'],
-                                ['Juan Cruz', 'Barangay Secretary', 'Active'],
-                                ['Maria Santos', 'Barangay Treasurer', 'Active'],
-                            ] as $row)
+                            @forelse($officials as $o)
                                 <tr class="hover:bg-gray-50">
-                                    <td class="px-3 py-3 admin-table-cell font-medium">{{ $row[0] }}</td>
-                                    <td class="px-3 py-3 admin-table-cell">{{ $row[1] }}</td>
-                                    <td class="px-3 py-3"><span class="badge-active">{{ $row[2] }}</span></td>
+                                    <td class="px-3 py-3 admin-table-cell font-medium">{{ $o->name }}</td>
+                                    <td class="px-3 py-3 admin-table-cell">{{ $o->position }}</td>
+                                    <td class="px-3 py-3">
+                                        <span class="{{ $o->is_active ? 'badge-active' : 'badge-inactive' }}">{{ $o->is_active ? 'Active' : 'Inactive' }}</span>
+                                    </td>
                                     <td class="px-3 py-3 admin-table-cell"><a href="#" class="font-semibold text-violet-600">Edit</a></td>
                                 </tr>
-                            @endforeach
+                            @empty
+                                <tr><td colspan="4" class="py-8 text-center text-sm text-gray-500">No officials yet.</td></tr>
+                            @endforelse
                         </tbody>
                     </table>
                 </div>

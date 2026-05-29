@@ -4,7 +4,7 @@
     <section class="space-y-5">
         <div class="flex items-center justify-between">
             <div>
-                <p class="text-[10px] font-bold uppercase tracking-widest text-gray-500 mb-1">BARANGAY NORTE POBLACION &nbsp;&rsaquo;&nbsp; <span class="text-red-600">SETTINGS</span></p>
+                <p class="text-[10px] font-bold uppercase tracking-widest text-gray-500 mb-1">BARANGAY NORTH POBLACION &nbsp;&rsaquo;&nbsp; <span class="text-red-600">SETTINGS</span></p>
                 <h2 class="text-2xl font-bold text-gray-900">Clearance Types</h2>
             </div>
         </div>

@@ -9,10 +9,10 @@
         <div class="flex items-center justify-between">
             <a href="{{ route('landing') }}" class="flex items-center gap-3">
                 <div class="overflow-hidden rounded-xl w-10 h-10 shadow-lg bg-white">
-                    <img src="{{ asset('images/logo.png') }}" alt="Barangay Norte Logo" class="w-full h-full object-cover">
+                    <img src="{{ asset('images/logo.png') }}" alt="Barangay North Logo" class="w-full h-full object-cover">
                 </div>
                 <div>
-                    <h2 class="font-display text-[15px] font-bold leading-tight text-white tracking-wide">Barangay Norte<br>Poblacion<br><span class="text-[9px] font-medium uppercase tracking-widest text-gray-400 mt-0.5 block">Official Portal</span></h2>
+                    <h2 class="font-display text-[15px] font-bold leading-tight text-white tracking-wide">Barangay North<br>Poblacion<br><span class="text-[9px] font-medium uppercase tracking-widest text-gray-400 mt-0.5 block">Official Portal</span></h2>
                 </div>
             </a>
 

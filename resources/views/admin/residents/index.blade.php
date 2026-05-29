@@ -29,22 +29,26 @@
                         </tr>
                     </thead>
                     <tbody class="divide-y divide-gray-100">
-                        @foreach ([
-                            ['Juan Dela Cruz', '34', 'Purok 1', 'Married', 'Y', 'May 14, 2026'],
-                            ['Maria Santos', '29', 'Purok 2', 'Single', 'Y', 'May 13, 2026'],
-                            ['Pedro Reyes', '41', 'Purok 3', 'Widowed', 'N', 'May 12, 2026'],
-                        ] as $row)
+                        @forelse($residents as $r)
                             <tr class="hover:bg-gray-50">
-                                @foreach ($row as $cell)
-                                    <td class="px-3 py-3 admin-table-cell">{{ $cell }}</td>
-                                @endforeach
+                                <td class="px-3 py-3 admin-table-cell font-medium">{{ $r->first_name }} {{ $r->last_name }}</td>
+                                <td class="px-3 py-3 admin-table-cell">{{ $r->date_of_birth ? now()->diffInYears($r->date_of_birth) : 'N/A' }}</td>
+                                <td class="px-3 py-3 admin-table-cell">{{ $r->purok }}</td>
+                                <td class="px-3 py-3 admin-table-cell">{{ $r->civil_status ?? 'N/A' }}</td>
+                                <td class="px-3 py-3 admin-table-cell">{{ $r->is_voter ? 'Y' : 'N' }}</td>
+                                <td class="px-3 py-3 admin-table-cell">{{ $r->created_at->format('M d, Y') }}</td>
                                 <td class="px-3 py-3 admin-table-cell">
                                     <a href="#" class="font-semibold text-violet-600">View</a>
                                 </td>
                             </tr>
-                        @endforeach
+                        @empty
+                            <tr><td colspan="7" class="py-8 text-center text-sm text-gray-500">No residents yet.</td></tr>
+                        @endforelse
                     </tbody>
                 </table>
+            </div>
+            <div class="mt-4">
+                {{ $residents->links() }}
             </div>
         </div>
     </section>

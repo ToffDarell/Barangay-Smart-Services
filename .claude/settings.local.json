@@ -3,5 +3,8 @@
     "allow": [
       "Bash(convert --version)"
     ]
-  }
+  },
+  "enabledMcpjsonServers": [
+    "claude-flow"
+  ]
 }

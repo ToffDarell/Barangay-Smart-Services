@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Barangay Norte Poblacion</title>
+    <title>Barangay North Poblacion</title>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
@@ -26,18 +26,19 @@
                             <path d="M12 2L3 6v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V6l-9-4z"/>
                         </svg>
                     </div>
-                    <span class="text-white font-display font-bold text-xl tracking-wide">Barangay Norte Poblacion</span>
+                    <span class="text-white font-display font-bold text-xl tracking-wide">Barangay North Poblacion</span>
                 </div>
                 
                 <div class="hidden md:flex items-center gap-8">
                     <a href="#" class="text-white font-medium text-sm border-b-2 border-yellow-400 pb-1">Services</a>
                     <a href="#" class="text-white/80 hover:text-white font-medium text-sm transition pb-1">Announcements</a>
                     <a href="#" class="text-white/80 hover:text-white font-medium text-sm transition pb-1">Transparency</a>
+                    <a href="{{ route('track') }}" class="text-white/80 hover:text-white font-medium text-sm transition pb-1">Track</a>
                 </div>
 
                 <div class="flex items-center gap-6">
                     <a href="{{ route('login') }}" class="text-white font-medium text-sm hover:text-yellow-400 transition">Login</a>
-                    <a href="#services" class="bg-yellow-400 text-[#7f0000] font-bold text-sm px-6 py-2.5 rounded hover:bg-yellow-300 transition shadow-lg">Request Documents</a>
+                    <a href="{{ route('request.index') }}" class="bg-yellow-400 text-[#7f0000] font-bold text-sm px-6 py-2.5 rounded hover:bg-yellow-300 transition shadow-lg">Request Documents</a>
                 </div>
             </nav>
 
@@ -52,7 +53,7 @@
 
                     <h1 class="text-5xl lg:text-6xl font-display font-bold text-white leading-[1.1]">
                         Smart Services for<br>
-                        <span class="text-yellow-400">Barangay Norte<br>Poblacion</span><br>
+                        <span class="text-yellow-400">Barangay North<br>Poblacion</span><br>
                         Residents
                     </h1>
 
@@ -61,7 +62,7 @@
                     </p>
 
                     <div class="flex flex-wrap items-center gap-4 pt-4">
-                        <a href="#services" class="inline-flex items-center gap-2 bg-yellow-400 text-[#7f0000] font-bold px-6 py-3.5 rounded hover:bg-yellow-300 transition shadow-[0_0_20px_rgba(250,204,21,0.3)]">
+                        <a href="{{ route('request.index') }}" class="inline-flex items-center gap-2 bg-yellow-400 text-[#7f0000] font-bold px-6 py-3.5 rounded hover:bg-yellow-300 transition shadow-[0_0_20px_rgba(250,204,21,0.3)]">
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
                             Request Documents
                         </a>
@@ -80,8 +81,8 @@
                                 <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
                             </div>
                             <div>
-                                <p class="text-[8px] font-bold uppercase tracking-widest text-red-800/60">Barangay Norte Poblacion</p>
-                                <p class="text-[7px] text-gray-400 tracking-wider">CITY OF SAMPLE, PHILIPPINES</p>
+                                <p class="text-[8px] font-bold uppercase tracking-widest text-red-800/60">Barangay North Poblacion</p>
+                                <p class="text-[7px] text-gray-400 tracking-wider">{{ \App\Helpers\Settings::get('municipality', 'Maramag') }}, {{ \App\Helpers\Settings::get('province', 'Bukidnon') }}</p>
                             </div>
                             <div class="w-full h-px bg-gray-100 my-2"></div>
                             <h3 class="text-xl font-display font-bold text-gray-800 leading-tight">CERTIFICATE OF<br>RESIDENCY</h3>
@@ -185,7 +186,7 @@
                         </div>
                         <h3 class="mb-2 text-xl font-bold text-gray-900 relative z-10">{{ $service['title'] }}</h3>
                         <p class="mb-6 text-sm text-gray-600 leading-relaxed relative z-10">{{ $service['desc'] }}</p>
-                        <a href="{{ route('public.services') }}" class="inline-flex items-center gap-2 text-sm font-bold text-[#b91c1c] hover:text-[#7f0000] relative z-10">
+                        <a href="{{ route('request.index') }}" class="inline-flex items-center gap-2 text-sm font-bold text-[#b91c1c] hover:text-[#7f0000] relative z-10">
                             Request Now
                             <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />

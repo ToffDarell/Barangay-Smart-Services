@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Barangay Norte Poblacion</title>
+    <title>Barangay North Poblacion</title>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
@@ -11,14 +11,10 @@
 
     <!-- Hero Section -->
     <div class="relative min-h-screen bg-[#7f0000] overflow-hidden">
-        <!-- Background Grid Pattern -->
         <div class="absolute inset-0 z-0 opacity-10" style="background-image: linear-gradient(rgba(255,255,255,0.2) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.2) 1px, transparent 1px); background-size: 40px 40px;"></div>
-        
-        <!-- Dark Gradient Overlay -->
         <div class="absolute inset-0 z-0 bg-gradient-to-br from-[#5a0000]/80 via-[#7f0000]/60 to-[#a00000]/40"></div>
 
         <div class="relative z-10 flex flex-col min-h-[90vh]">
-            <!-- Navigation -->
             <nav class="flex items-center justify-between px-8 py-6">
                 <div class="flex items-center gap-3">
                     <div class="w-8 h-8 bg-white rounded-full flex items-center justify-center p-1">
@@ -26,42 +22,31 @@
                             <path d="M12 2L3 6v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V6l-9-4z"/>
                         </svg>
                     </div>
-                    <span class="text-white font-display font-bold text-xl tracking-wide">Barangay Norte Poblacion</span>
+                    <span class="text-white font-display font-bold text-xl tracking-wide">Barangay North Poblacion</span>
                 </div>
-                
                 <div class="hidden md:flex items-center gap-8">
-                    <a href="#" class="text-white font-medium text-sm border-b-2 border-yellow-400 pb-1">Services</a>
-                    <a href="#" class="text-white/80 hover:text-white font-medium text-sm transition pb-1">Announcements</a>
-                    <a href="#" class="text-white/80 hover:text-white font-medium text-sm transition pb-1">Transparency</a>
+                    <a href="#services" class="text-white font-medium text-sm border-b-2 border-yellow-400 pb-1">Services</a>
+                    <a href="{{ route('public.announcements') }}" class="text-white/80 hover:text-white font-medium text-sm transition pb-1">Announcements</a>
+                    <a href="{{ route('public.transparency') }}" class="text-white/80 hover:text-white font-medium text-sm transition pb-1">Transparency</a>
                 </div>
-
                 <div class="flex items-center gap-6">
                     <a href="{{ route('login') }}" class="text-white font-medium text-sm hover:text-yellow-400 transition">Login</a>
-                    <a href="#services" class="bg-yellow-400 text-[#7f0000] font-bold text-sm px-6 py-2.5 rounded hover:bg-yellow-300 transition shadow-lg">Request Documents</a>
+                    <a href="{{ route('request.index') }}" class="bg-yellow-400 text-[#7f0000] font-bold text-sm px-6 py-2.5 rounded hover:bg-yellow-300 transition shadow-lg">Request Documents</a>
                 </div>
             </nav>
 
-            <!-- Hero Content -->
             <div class="flex-1 flex flex-col md:flex-row items-center justify-between px-8 lg:px-16 max-w-7xl mx-auto w-full pt-12 lg:pt-0">
-                
                 <div class="w-full md:w-1/2 space-y-6">
-                    <div class="inline-flex items-center gap-2 rounded-full border border-yellow-500/30 bg-yellow-900/40 px-3 py-1.5 backdrop-blur-md">
-                        <span class="h-2 w-2 rounded-full bg-yellow-400"></span>
-                        <span class="text-[10px] font-bold uppercase tracking-wider text-yellow-400">Official Digital Services</span>
-                    </div>
-
                     <h1 class="text-5xl lg:text-6xl font-display font-bold text-white leading-[1.1]">
                         Smart Services for<br>
-                        <span class="text-yellow-400">Barangay Norte<br>Poblacion</span><br>
+                        <span class="text-yellow-400">Barangay North<br>Poblacion</span><br>
                         Residents
                     </h1>
-
                     <p class="text-lg text-white/90 max-w-lg font-medium leading-relaxed">
                         Request certificates, stay informed, and connect with your community anytime, anywhere. A modern approach to local governance.
                     </p>
-
                     <div class="flex flex-wrap items-center gap-4 pt-4">
-                        <a href="#services" class="inline-flex items-center gap-2 bg-yellow-400 text-[#7f0000] font-bold px-6 py-3.5 rounded hover:bg-yellow-300 transition shadow-[0_0_20px_rgba(250,204,21,0.3)]">
+                        <a href="{{ route('request.index') }}" class="inline-flex items-center gap-2 bg-yellow-400 text-[#7f0000] font-bold px-6 py-3.5 rounded hover:bg-yellow-300 transition shadow-[0_0_20px_rgba(250,204,21,0.3)]">
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
                             Request Documents
                         </a>
@@ -70,18 +55,18 @@
                             View Announcements
                         </a>
                     </div>
+
                 </div>
 
                 <div class="w-full md:w-5/12 mt-12 md:mt-0 relative flex justify-center lg:justify-end">
-                    <!-- Document Card Graphic -->
                     <div class="bg-white rounded-xl shadow-2xl p-8 w-80 transform rotate-3 z-10 border border-gray-100">
                         <div class="flex flex-col items-center text-center space-y-4">
                             <div class="w-16 h-16 bg-red-100 rounded-2xl flex items-center justify-center text-red-800">
                                 <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
                             </div>
                             <div>
-                                <p class="text-[8px] font-bold uppercase tracking-widest text-red-800/60">Barangay Norte Poblacion</p>
-                                <p class="text-[7px] text-gray-400 tracking-wider">CITY OF SAMPLE, PHILIPPINES</p>
+                                <p class="text-[8px] font-bold uppercase tracking-widest text-red-800/60">Barangay North Poblacion</p>
+                                <p class="text-[7px] text-gray-400 tracking-wider">{{ \App\Helpers\Settings::get('municipality', 'Maramag') }}, {{ \App\Helpers\Settings::get('province', 'Bukidnon') }}</p>
                             </div>
                             <div class="w-full h-px bg-gray-100 my-2"></div>
                             <h3 class="text-xl font-display font-bold text-gray-800 leading-tight">CERTIFICATE OF<br>RESIDENCY</h3>
@@ -92,14 +77,12 @@
                             </div>
                         </div>
                     </div>
-                    
                     <div class="absolute -bottom-4 -right-4 z-20">
                         <div class="w-14 h-14 bg-yellow-400 rounded-xl shadow-lg flex items-center justify-center text-[#7f0000] transform -rotate-3 border-2 border-[#7f0000]">
                             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
 
@@ -113,7 +96,7 @@
                         </div>
                         <div class="pt-1">
                             <p class="text-[11px] font-bold text-white tracking-wide">Our Community</p>
-                            <p class="text-[9px] font-semibold tracking-wider text-white/60 mt-0.5">Stronger Together</p>
+                            <p class="text-[9px] font-semibold tracking-wider text-white mt-0.5">Stronger Together</p>
                         </div>
                     </div>
                     <div class="flex flex-col md:flex-row items-center md:items-start gap-4 pl-0 md:pl-6">
@@ -121,8 +104,8 @@
                             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
                         </div>
                         <div>
-                            <p class="text-3xl font-display font-bold text-white">2,500+</p>
-                            <p class="text-[9px] font-bold uppercase tracking-widest text-white/60 mt-1">Active Residents</p>
+                            <p class="text-3xl font-display font-bold text-white">{{ number_format($residentCount) }}+</p>
+                            <p class="text-[9px] font-bold uppercase tracking-widest text-white mt-1">Active Residents</p>
                         </div>
                     </div>
                     <div class="flex flex-col md:flex-row items-center md:items-start gap-4 pl-0 md:pl-6">
@@ -130,8 +113,8 @@
                             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
                         </div>
                         <div>
-                            <p class="text-3xl font-display font-bold text-white">6+</p>
-                            <p class="text-[9px] font-bold uppercase tracking-widest text-white/60 mt-1">Services Online</p>
+                            <p class="text-3xl font-display font-bold text-white">{{ number_format($totalRequests) }}+</p>
+                            <p class="text-[9px] font-bold uppercase tracking-widest text-white mt-1">Requests Processed</p>
                         </div>
                     </div>
                     <div class="flex flex-col md:flex-row items-center md:items-start gap-4 pl-0 md:pl-6">
@@ -140,7 +123,7 @@
                         </div>
                         <div>
                             <p class="text-3xl font-display font-bold text-white">100%</p>
-                            <p class="text-[9px] font-bold uppercase tracking-widest text-white/60 mt-1">Transparent</p>
+                            <p class="text-[9px] font-bold uppercase tracking-widest text-white mt-1">Transparent</p>
                         </div>
                     </div>
                     <div class="flex flex-col md:flex-row items-center md:items-start gap-4 pl-0 md:pl-6">
@@ -149,7 +132,7 @@
                         </div>
                         <div>
                             <p class="text-3xl font-display font-bold text-white">24/7</p>
-                            <p class="text-[9px] font-bold uppercase tracking-widest text-white/60 mt-1">Accessibility</p>
+                            <p class="text-[9px] font-bold uppercase tracking-widest text-white mt-1">Accessibility</p>
                         </div>
                     </div>
                 </div>
@@ -185,7 +168,7 @@
                         </div>
                         <h3 class="mb-2 text-xl font-bold text-gray-900 relative z-10">{{ $service['title'] }}</h3>
                         <p class="mb-6 text-sm text-gray-600 leading-relaxed relative z-10">{{ $service['desc'] }}</p>
-                        <a href="{{ route('public.services') }}" class="inline-flex items-center gap-2 text-sm font-bold text-[#b91c1c] hover:text-[#7f0000] relative z-10">
+                        <a href="{{ route('request.index') }}" class="inline-flex items-center gap-2 text-sm font-bold text-[#b91c1c] hover:text-[#7f0000] relative z-10">
                             Request Now
                             <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
@@ -193,6 +176,18 @@
                         </a>
                     </div>
                 @endforeach
+            </div>
+
+            <div class="mt-12 text-center">
+                <div class="inline-flex items-center gap-3 bg-gray-50 border border-gray-200 rounded-2xl px-8 py-5 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="w-10 h-10 bg-[#7f0000]/10 rounded-xl flex items-center justify-center shrink-0">
+                        <svg class="w-5 h-5 text-[#7f0000]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <p class="text-gray-700 font-medium">
+                        Already submitted a request?
+                        <a href="{{ route('track') }}" class="text-[#b91c1c] font-bold hover:text-[#7f0000] underline underline-offset-2 transition">Track its status &rarr;</a>
+                    </p>
+                </div>
             </div>
         </div>
     </section>
